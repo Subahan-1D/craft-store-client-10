@@ -5,10 +5,12 @@ import Footer from "../Footer/Footer";
 
 const Root = () => {
     return (
-        <div className="max-w-7xl mx-auto">
-            <Navbar></Navbar>
-            <Outlet></Outlet>
-            <Footer></Footer>
+        <div>
+            <div className=" container max-w-7xl mx-auto">
+                <Navbar></Navbar>
+                <Outlet></Outlet>
+                <Footer></Footer>
+            </div>
         </div>
     );
 };

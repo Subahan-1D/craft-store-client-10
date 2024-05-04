@@ -14,13 +14,13 @@ const Navbar = () => {
                 console.log(error);
             })
     }
-    const navLinks = <>
+    const navLinks = <div className="flex justify-center items-center font-poppins">
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/allart'>All Art & craft Items</NavLink></li>
         <li><NavLink to='/addcraft'>Add Craft Item</NavLink></li>
         <li><NavLink to='/myart'>My Art&Craft List</NavLink></li>
         <li><NavLink to='/login'>Login</NavLink></li>
-    </>
+    </div>
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
