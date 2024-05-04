@@ -12,6 +12,8 @@ import Allart from './components/AllArt/Allart.jsx';
 import Login from './components/Login/Login.jsx';
 import Register from './components/Register/Register.jsx';
 import AuthProvider from './components/Providers/AuthProvider.jsx';
+import AddCraft from './components/AddCraft/AddCraft.jsx';
+import MyArt from './components/MyArt/MyArt.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +28,15 @@ const router = createBrowserRouter([
         path:'/allart',
         element:<Allart></Allart>
       },
+      {
+        path:'/addcraft',
+        element:<AddCraft></AddCraft>
+      },
+      {
+        path:'/myart',
+        element:<MyArt></MyArt>
+      },
+
       {
         path:'/login',
         element:<Login></Login>
