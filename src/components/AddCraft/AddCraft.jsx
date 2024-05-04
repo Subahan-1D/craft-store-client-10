@@ -1,10 +1,44 @@
 import React from 'react';
 
 const AddCraft = () => {
+
+    const handleAddCraftItem = e => {
+        e.preventDefault();
+        const form = e.target;
+        const userName = form.userName.value;
+        const email = form.email.value;
+        const image = form.image.value;
+        const subCategoryName = form.subCategoryName.value;
+        const  price = form.price.value;
+        const customization = form.customization.value;
+        const stockStatus = form.stockStatus.value;
+        const item = form.item.value;
+        const description = form.description.value;
+        const rating = form.rating.value;
+        const processingTime =form.processingTime.value;
+
+        const newCraftStore = {userName,email,image,subCategoryName,price,customization,stockStatus,item,description,rating,processingTime}
+        console.log(newCraftStore);
+
+        // send to the server
+
+        fetch('http://localhost:5000/categories',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(newCraftStore)
+        })
+        .then(res =>res.json())
+        .then(data =>{
+            console.log(data);
+        })
+
+    }
     return (
         <div className='w-1/2 mx-auto space-y-7 bg-[#f4f3f0] rounded-md p-14'>
             <h2 className='text-3xl font-semibold text-center'>Add Craft Item Page</h2>
-            <form  >
+            <form  onSubmit={handleAddCraftItem} >
                 <div className='grid md:grid-cols-1 lg:grid-cols-2   gap-6'>
                     <div>
                         <div className="form-control">
@@ -18,53 +52,15 @@ const AddCraft = () => {
                                 <span className="label-text">Subcategory_Name
                                 </span>
                             </label>
-                            <input type="text" name='category' placeholder=" Enter Subcategory-Name" className="input input-bordered" required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Category</span>
-                            </label>
-                            <input type="text" name='category' placeholder=" Enter coffee category" className="input input-bordered" required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Ratting</span>
-                            </label>
-                            <input type="text" name='Rating' placeholder=" Ratting " className="input input-bordered" required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Processing-Time</span>
-                            </label>
-                            <input type="text" name='processingTime' placeholder=" Processing -Time  " className="input input-bordered" required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">User-Email</span>
-                            </label>
-                            <input type="text" name='email' placeholder=" User-Email" className="input input-bordered" required />
-                        </div>
-                    </div>
-                    <div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Item-Name</span>
-                            </label>
-                            <input type="text" name='item' placeholder=" Enter Item Name" className="input input-bordered" required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Short Description</span>
-                            </label>
-                            <input type="text" name='description' placeholder=" Enter Short description" className="input input-bordered" required />
+                            <input type="text" name='subCategoryName' placeholder=" Enter Subcategory-Name" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Price</span>
                             </label>
-                            <input type="text" name='Price' placeholder=" Enter Price" className="input input-bordered" required />
+                            <input type="text" name='price' placeholder=" Enter Price" className="input input-bordered" required />
                         </div>
-                        <div className="form-control">
+                           <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Customization-</span>
                             </label>
@@ -86,9 +82,41 @@ const AddCraft = () => {
                             <label className="label">
                                 <span className="label-text">User-Name</span>
                             </label>
-                            <input type="text" name='name' placeholder=" User-Name" className="input input-bordered" required />
+                            <input type="text" name='userName' placeholder=" User-Name" className="input input-bordered" required />
                         </div>
-
+                    </div>
+                    <div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Item-Name</span>
+                            </label>
+                            <input type="text" name='item' placeholder=" Enter Item Name" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Short Description</span>
+                            </label>
+                            <input type="text" name='description' placeholder=" Enter Short description" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Ratting</span>
+                            </label>
+                            <input type="text" name='rating' placeholder=" Ratting " className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Processing-Time</span>
+                            </label>
+                            <input type="text" name='processingTime' placeholder=" Processing -Time  " className="input input-bordered" required />
+                        </div>
+                     
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">User-Email</span>
+                            </label>
+                            <input type="text" name='email' placeholder=" User-Email" className="input input-bordered" required />
+                        </div>
                     </div>
                 </div>
                 <input type="submit" value="Add " className='btn bg-[#3eceb4] text-bold md:w-full mt-4' />

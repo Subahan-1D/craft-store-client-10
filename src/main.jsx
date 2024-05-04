@@ -14,6 +14,7 @@ import Register from './components/Register/Register.jsx';
 import AuthProvider from './components/Providers/AuthProvider.jsx';
 import AddCraft from './components/AddCraft/AddCraft.jsx';
 import MyArt from './components/MyArt/MyArt.jsx';
+import Categories from './components/Categories/Categories.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>
+      },
+      {
+        path:'/categories',
+        element:<Categories></Categories>
       },
       {
         path:'/allart',
