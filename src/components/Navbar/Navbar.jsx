@@ -14,7 +14,7 @@ const Navbar = () => {
                 console.log(error);
             })
     }
-    const navLinks = <div className="flex justify-center items-center font-poppins">
+    const navLinks = <div className="flex justify-center items-center font-poppins ">
         <li className='text-[18px]' ><NavLink to='/'>Home</NavLink></li>
         <li className='text-[18px]'><NavLink to='/allart'>All Art & craft Items</NavLink></li>
         <li className='text-[18px]'><NavLink to='/addcraft'>Add Craft Item</NavLink></li>
@@ -37,7 +37,7 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1 ">
                     {navLinks}
                 </ul>
             </div>
@@ -63,6 +63,7 @@ const Navbar = () => {
                 }
             </div>
         </div>
+        
     );
 };
 
