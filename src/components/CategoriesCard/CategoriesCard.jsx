@@ -49,6 +49,9 @@ const CategoriesCard = ({ category }) => {
                     <p className="text-gray-600 mb-4"><strong>Price:</strong> {price}</p>
                     <p className="text-gray-600 mb-4"><strong>Ratting:</strong> {rating}</p>
                     <p className="text-gray-600 mb-4"><strong>StockStatus:</strong> {stockStatus}</p>
+                    <p className="text-gray-600 mb-4"><strong>SubCategoryName:</strong> {subCategoryName}</p>
+                    <p className="text-gray-600 mb-4"><strong> Description:</strong> { description}</p>
+                    <p className="text-gray-600 mb-4"><strong> ProcessingTime:</strong> { processingTime}</p>
                     <p className="text-gray-600 mb-4"><strong> Customization:</strong> {customization}</p>
                 </div>
                 <hr />
