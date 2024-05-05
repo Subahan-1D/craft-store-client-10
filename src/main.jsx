@@ -23,11 +23,8 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/',
-        element:<Home></Home>
-      },
-      {
-        path:'/categories',
-        element:<Categories></Categories>
+        element:<Home></Home>,
+        loader:()=> fetch('http://localhost:5000/categories')
       },
       {
         path:'/allart',
@@ -38,8 +35,9 @@ const router = createBrowserRouter([
         element:<AddCraft></AddCraft>
       },
       {
-        path:'/myart',
-        element:<MyArt></MyArt>
+        path:'/myart/:id',
+        element:<MyArt></MyArt>,
+       loader:({params})=> fetch(`http://localhost:5000/categories/${params.id}`)
       },
 
       {
