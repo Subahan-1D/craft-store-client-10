@@ -29,7 +29,8 @@ const router = createBrowserRouter([
       },
       {
         path:'/allart',
-        element:<PrivateRoute><Allart></Allart></PrivateRoute>
+        element:<PrivateRoute><Allart></Allart></PrivateRoute>,
+        loader:()=> fetch('http://localhost:5000/categories')
       },
       {
         path:'/addcraft',

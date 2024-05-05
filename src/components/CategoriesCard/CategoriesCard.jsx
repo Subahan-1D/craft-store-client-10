@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import { IoStar } from "react-icons/io5";
 
 const CategoriesCard = ({ category, craft, setCraft }) => {
-
+  
     const handleDelete = _id => {
         console.log(_id);
         Swal.fire({
