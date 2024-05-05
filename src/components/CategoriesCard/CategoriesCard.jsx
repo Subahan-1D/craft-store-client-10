@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-const CategoriesCard = ({ category }) => {
+const CategoriesCard = ({ category, craft, setCraft }) => {
 
     const handleDelete = _id => {
         console.log(_id);
@@ -16,18 +16,20 @@ const CategoriesCard = ({ category }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/categories/${_id}`,{
-                    method:'DELETE'
+                fetch(`http://localhost:5000/categories/${_id}`, {
+                    method: 'DELETE'
                 })
                     .then(res => res.json())
                     .then(data => {
                         console.log(data);
                         if (data.deleteCount > 0) {
-                              Swal.fire({
+                            Swal.fire({
                                 title: "Deleted!",
                                 text: "Your printing has been deleted.",
                                 icon: "success"
-                              });
+                            });
+                            const remaining = craft.filter(caf => caf._id !== _id)
+                            setCraft(remaining);
                         }
                     })
 
@@ -50,8 +52,8 @@ const CategoriesCard = ({ category }) => {
                     <p className="text-gray-600 mb-4"><strong>Ratting:</strong> {rating}</p>
                     <p className="text-gray-600 mb-4"><strong>StockStatus:</strong> {stockStatus}</p>
                     <p className="text-gray-600 mb-4"><strong>SubCategoryName:</strong> {subCategoryName}</p>
-                    <p className="text-gray-600 mb-4"><strong> Description:</strong> { description}</p>
-                    <p className="text-gray-600 mb-4"><strong> ProcessingTime:</strong> { processingTime}</p>
+                    <p className="text-gray-600 mb-4"><strong> Description:</strong> {description}</p>
+                    <p className="text-gray-600 mb-4"><strong> ProcessingTime:</strong> {processingTime}</p>
                     <p className="text-gray-600 mb-4"><strong> Customization:</strong> {customization}</p>
                 </div>
                 <hr />

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CategoriesCard from '../CategoriesCard/CategoriesCard';
 
 const Categories = () => {
-    const crafts = useLoaderData()
+    const crafts = useLoaderData();
+    const [craft,setCraft] = useState(crafts)
     return (
         <div className=''>
             <h2 className='text-center'>This  is Category Section : {crafts.length}</h2>
@@ -12,6 +13,8 @@ const Categories = () => {
                     crafts.map(category => <CategoriesCard
                         key={category._id}
                         category={category}
+                        craft={craft}
+                        setCraft={setCraft}
                     ></CategoriesCard>)
                 }
             </div>
