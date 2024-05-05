@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { IoStar } from "react-icons/io5";
 
 const CategoriesCard = ({ category, craft, setCraft }) => {
 
@@ -45,16 +46,16 @@ const CategoriesCard = ({ category, craft, setCraft }) => {
                     <img className='w-full h-auto' src={image} alt={item} />
                 </figure>
                 <div className="p-6">
-                    <h1 className="text-3xl font-bold mb-4">item_name:{item}</h1>
-                    <p className="text-gray-600 mb-4"><strong>User Name:</strong> {userName}</p>
-                    <p className="text-gray-600 mb-4"><strong>Email:</strong>{email}</p>
-                    <p className="text-gray-600 mb-4"><strong>Price:</strong> {price}</p>
-                    <p className="text-gray-600 mb-4"><strong>Ratting:</strong> {rating}</p>
-                    <p className="text-gray-600 mb-4"><strong>StockStatus:</strong> {stockStatus}</p>
-                    <p className="text-gray-600 mb-4"><strong>SubCategoryName:</strong> {subCategoryName}</p>
-                    <p className="text-gray-600 mb-4"><strong> Description:</strong> {description}</p>
-                    <p className="text-gray-600 mb-4"><strong> ProcessingTime:</strong> {processingTime}</p>
-                    <p className="text-gray-600 mb-4"><strong> Customization:</strong> {customization}</p>
+                    <h1 className="text-3xl font-bold mb-4">item_name: {item}</h1>
+                    <p className="text-gray-600 mb-4"><strong>User Name: </strong> {userName}</p>
+                    <p className="text-gray-600 mb-4"><strong>Email: </strong>{email}</p>
+                    <p className="text-gray-600 mb-4"><strong>Price: </strong> {price}</p>
+                    <p className="text-gray-600 mb-4 flex"><strong>Ratting: </strong> {rating}<span><IoStar className='mt-1 text-yellow-500 ml-2'></IoStar></span></p>
+                    <p className="text-gray-600 mb-4"><strong>StockStatus: </strong> {stockStatus}</p>
+                    <p className="text-gray-600 mb-4"><strong>SubCategoryName: </strong> {subCategoryName}</p>
+                    <p className="text-gray-600 mb-4"><strong> Description: </strong> {description}</p>
+                    <p className="text-gray-600 mb-4"><strong> ProcessingTime:  </strong> {processingTime}</p>
+                    <p className="text-gray-600 mb-4"><strong> Customization: </strong> {customization}</p>
                 </div>
                 <hr />
                 <div className='flex justify-center my-4 mr-5'>

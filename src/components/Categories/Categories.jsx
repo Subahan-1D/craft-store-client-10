@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+
 import { useLoaderData } from 'react-router-dom';
 import CategoriesCard from '../CategoriesCard/CategoriesCard';
+import { useState } from 'react';
 
 const Categories = () => {
     const crafts = useLoaderData();
