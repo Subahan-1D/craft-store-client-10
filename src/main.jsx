@@ -15,6 +15,7 @@ import AuthProvider from './components/Providers/AuthProvider.jsx';
 import AddCraft from './components/AddCraft/AddCraft.jsx';
 import MyArt from './components/MyArt/MyArt.jsx';
 import Categories from './components/Categories/Categories.jsx';
+import PrivateRoute from './components/Routes/PrivateRoute.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,15 +29,15 @@ const router = createBrowserRouter([
       },
       {
         path:'/allart',
-        element:<Allart></Allart>
+        element:<PrivateRoute><Allart></Allart></PrivateRoute>
       },
       {
         path:'/addcraft',
-        element:<AddCraft></AddCraft>
+        element:<PrivateRoute><AddCraft></AddCraft></PrivateRoute>
       },
       {
         path:'/myart/:id',
-        element:<MyArt></MyArt>,
+        element:<PrivateRoute><MyArt></MyArt></PrivateRoute>,
        loader:({params})=> fetch(`http://localhost:5000/categories/${params.id}`)
       },
 

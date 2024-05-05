@@ -8,7 +8,6 @@ const Categories = () => {
     const [craft,setCraft] = useState(crafts)
     return (
         <div className=''>
-            <h2 className='text-center'>This  is Category Section : {crafts.length}</h2>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-4 justify-center m-4' >
                 {
                     crafts.map(category => <CategoriesCard
