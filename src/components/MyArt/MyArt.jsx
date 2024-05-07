@@ -24,7 +24,7 @@ const MyArt = () => {
 
         // send to the server
 
-        fetch(`http://localhost:5000/categories/${_id}`, {
+        fetch(`https://art-craft-store-server-ecru.vercel.app//categories/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

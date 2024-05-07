@@ -25,12 +25,11 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>,
-        loader:()=> fetch('http://localhost:5000/categories')
+        loader:()=> fetch('https://art-craft-store-server-ecru.vercel.app/categories')
       },
       {
         path:'/allart',
         element:<PrivateRoute><Allart></Allart></PrivateRoute>,
-        loader:()=> fetch('http://localhost:5000/categories')
       },
       {
         path:'/addcraft',
@@ -39,7 +38,7 @@ const router = createBrowserRouter([
       {
         path:'/myart/:id',
         element:<PrivateRoute><MyArt></MyArt></PrivateRoute>,
-       loader:({params})=> fetch(`http://localhost:5000/categories/${params.id}`)
+       loader:({params})=> fetch(`https://art-craft-store-server-ecru.vercel.app/categories/${params.id}`)
       },
 
       {

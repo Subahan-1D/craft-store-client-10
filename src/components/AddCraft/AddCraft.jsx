@@ -23,7 +23,7 @@ const AddCraft = () => {
 
         // send to the server
 
-        fetch('http://localhost:5000/categories', {
+        fetch('https://art-craft-store-server-ecru.vercel.app//categories', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
